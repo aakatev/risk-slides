@@ -150,6 +150,8 @@ Mohammad Ashan
 
 ## Example of Application Flow
 
+### Code
+
 #### WARNING! Not a real code!
 
 ---
@@ -200,6 +202,33 @@ router.post('/chat/:id', (request, response) => {
 
 ---
 
+## Example of Application Flow
+
+#### Diagram
+
+---
+
+##### 1. A client creates an action
+
+![](assets/1.png)
+
+---
+
+##### 2. Server handles action, and commits change
+
+![](assets/2.png)
+
+---
+##### 3. Server broadcasts update event
+
+![](assets/3.png)
+
+---
+##### 4. All subscribed clients syncronize state
+
+![](assets/4.png)
+
+---
 ## Demo
 
 [Link](https://risk-game-667.herokuapp.com/lobby)
