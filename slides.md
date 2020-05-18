@@ -27,6 +27,8 @@ Mohammad Ashan
 
 - Components
 
+- Application Flow
+
 - Demo
 
 ---
@@ -68,7 +70,7 @@ Mohammad Ashan
 
 ## Non functional specs
 
-- Fully functional on Chrome 81+
+- Fully compatible with Chrome 81+
 
 - Look nice on non-mobile devices
 
@@ -123,9 +125,9 @@ Mohammad Ashan
 
 #### Key functions
 
-- Process game state, and chat messages
+- Processes game state, and chat messages
 
-- Manages sessions
+- Manages users sessions
 
 - Broadcasts events (WS)
 
@@ -146,6 +148,58 @@ Mohammad Ashan
 
 ---
 
+## Example of Application Flow
+
+#### WARNING! Not a real code!
+
+---
+
+##### Chat Client
+
+```javascripts
+class Chat {
+  messages = []
+  ws.on(MESSAGE_EVENT => this.getMessages)
+  
+  setMessages(newMessages) { 
+    this.messages = newMessages 
+  }  
+  
+  getMessages() { 
+    http.get(`/chat/${id}`)
+      .then(this.setMessages).catch(displayError) 
+  }
+  
+  sendMessage(message) { 
+    http.post('/chat/${id}', message).catch(displayError) 
+  }
+}
+```
+
+---
+
+##### Chat API
+
+```javascripts
+router.get('/chat/:id', (request, response) => {
+  db.getMessagesByChatId(request.params.id)
+    .then(response.json)
+    .catch(response.json)
+})
+
+router.post('/chat/:id', (request, response) => {
+  db.addMessage(request.params.id, 
+                request.body.message)
+    .then(() => {
+      response.json({ error: undefined })
+      ws.emit(MESSAGE_EVENT)
+    })
+    .catch(response.json)
+})
+```
+
+---
+
 ## Demo
 
 [Link](https://risk-game-667.herokuapp.com/lobby)
@@ -153,4 +207,4 @@ Mohammad Ashan
 
 ---
 
-# <!--fit--> :+1:
+# Thanks!
