@@ -25,6 +25,8 @@ Mohammad Ashan
 
 - Technology Used
 
+- Components
+
 - Demo
 
 ---
@@ -32,7 +34,7 @@ Mohammad Ashan
 
 ## Overview
 
-Based on risk board game
+##### Based on risk board game
 
 - 42 territories
 
@@ -78,7 +80,76 @@ Based on risk board game
 
 ## Technology Used
 
-- JS and 
+- Server: JS and Express
+
+- Client: JS and Preact/Vue
+
+- Storage: Postgres
+
+- Tons of dependencies
+
+---
+
+
+## Components
+
+- Database
+
+- Server
+
+- Lobby
+
+- Chat
+
+- Gameboard
+
+---
+
+## Database
+
+#### Stores:
+
+- Users
+
+- Messages
+
+- Games
+
+- State of each game
+
+---
+
+## Server
+
+#### Key functions
+
+- Process game state, and chat messages
+
+- Manages sessions
+
+- Broadcasts events (WS)
+
+- Exposes HTTP API
+
+---
+
+## Lobby, Chat, and Gameboard
+
+#### Key functions
+
+- Listen for events (WS)
+
+- Execute state update logic 
+
+- Rerender the updated state
+
+
+---
+
+## Demo
+
+[Link](https://risk-game-667.herokuapp.com/lobby)
+
 
 ---
 
