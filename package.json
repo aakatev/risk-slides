@@ -1,0 +1,14 @@
+{
+  "name": "risk-slides",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "serve": "npx serve",
+    "build": "npx @marp-team/marp-cli -o index.html -w slides.md",
+    "build:watch": "npx @marp-team/marp-cli -o index.html -w slides.md"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
